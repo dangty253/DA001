@@ -29,12 +29,12 @@ else
 <table width="50%" border="1" cellspacing="3">
   <tr>
     <td width="23%">Mã may bay</td>
-    <td width="77%"><input type="text" name="MaMayBay" value="<?php echo $MaMayBay;?>"></td>
+    <td width="77%"><input type="text" name="MaMayBay" value="<?php echo $MaMayBay;?>" maxlength="6"></td>
   </tr>
   
   <tr>
     <td>Mã hãng máy bay</td>
-    <td><input type="text" name="MaHangMayBay" value="<?php echo $MaHangMayBay;?>"></td>
+    <td><input type="text" name="MaHangMayBay" value="<?php echo $MaHangMayBay;?>" maxlength="3"></td>
   </tr>
   <tr>
     <td colspan="2">
