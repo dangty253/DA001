@@ -38,36 +38,36 @@ else
 <legend><?php echo $info;?></legend>
 <table width="50%" border="1" cellspacing="3">
   <tr>
-    <td width="23%">Mã sân bay</td>
+    <td width="23%">Mã chuyến bay</td>
     <td width="77%"><input type="text" name="MaChuyenBay" value="<?php echo $MaChuyenBay;?>"></td>
   </tr>
   
   <tr>
-    <td>Tên sân bay</td>
+    <td>Giờ khởi hành</td>
     <td><input type="text" name="GioKhoiHanh" value="<?php echo $GioKhoiHanh;?>"></td>
   </tr>
     <tr>
-    <td>Tên tỉnh thành</td>
+    <td>Giờ hạ cánh</td>
     <td><input type="text" name="GioHaCanh" value="<?php echo $GioHaCanh;?>"></td>
   </tr>
   <tr>
     <tr>
-    <td>Tên tỉnh thành</td>
+    <td>Mã tuyến bay</td>
     <td><input type="text" name="MaTuyenBay" value="<?php echo $MaTuyenBay;?>"></td>
   </tr>
   <tr>
     <tr>
-    <td>Tên tỉnh thành</td>
+    <td>Mã máy bay</td>
     <td><input type="text" name="MaMayBay" value="<?php echo $MaMayBay;?>"></td>
   </tr>
   <tr>
     <tr>
-    <td>Tên tỉnh thành</td>
-    <td><input type="text" name="NgayKhoiHanh" value="<?php echo $NgayKhoiHanh;?>"></td>
+    <td>Ngày khởi hành</td>
+    <td><input type="date" name="NgayKhoiHanh" value="<?php echo $NgayKhoiHanh;?>"></td>
   </tr>
   <tr>
     <tr>
-    <td>Tên tỉnh thành</td>
+    <td>Thời gian bay</td>
     <td><input type="text" name="ThoiGianBay" value="<?php echo $ThoiGianBay;?>"></td>
   </tr>
   <tr>

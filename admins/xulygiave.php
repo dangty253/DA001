@@ -5,26 +5,24 @@ if (!isset($_SESSION)) session_start();
 spl_autoload_register("loadClass");
 
 $c = getIndex("c","");
-$username=postIndex("username","");
-$Password=md5(postIndex("Password",""));
-$Ten=postIndex("Ten","");
-$SoDienThoai=postIndex("SoDienThoai","");
-$Email=postIndex("Email","");
+$MaChuyenBay=postIndex("MaChuyenBay","");
+$MaHangGhe=postIndex("MaHangGhe","");
+$GiaVe=postIndex("GiaVe","");
 if($c=='add')
 {
-	$Sb=new Admin();
-	$Sb->add($username,$Password,$Ten,$SoDienThoai,$Email);
+	$Sb=new Giave();
+	$Sb->add($MaChuyenBay,$MaHangGhe,$GiaVe);
 }
 else if($c=='update')
 {
-	$Sb=new Admin();
-	$Sb->update($username,$Password,$Ten,$SoDienThoai,$Email);
+	$Sb=new Giave();
+	$Sb->update($MaChuyenBay,$MaHangGhe,$GiaVe);
 }
 else if($c=='delete')
 {
-	$username = getIndex("id","");
-	$Sb=new Admin();
-	$Sb->delete($username);
+	$MaChuyenBay = getIndex("id","");
+	$Sb=new Giave();
+	$Sb->delete($MaChuyenBay);
 }
 header("Location: index.php?mod=datvemb&group=giave&c=$c");
 exit;

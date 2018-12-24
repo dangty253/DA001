@@ -35,12 +35,26 @@ else
   </tr>
   
   <tr>
-    <td>Mã sân bay đi</td>
-    <td><input type="text" name="MaHangGhe" value="<?php echo $MaHangGhe;?>"></td>
+    <td>Mã hạng ghế</td>
+    <td><input type="text" name="MaHangGhe" value="<?php echo $MaHangGhe;?>" maxlength="3"></td>
   </tr>
+  <tr>
+  <td>Các mã hạng ghế phù hợp</td>
+    <td><table class="dropdown-content"> 
+          <?php
+          $Hg = new Hangghe();
+          $arrHg = $Hg->getall();
+          foreach ($arrHg as $i => $v) {
+            if($i%2==0) echo"<tr>";
+            echo "<td>{$v['MaHangGhe']} - {$v['TenHangGhe']}</td>";
+            
+          }
+          ?> 
+        </table></td>
+    </tr>
     <tr>
-    <td>Mã sân bay đến</td>
-    <td><input type="text" name="GiaVe" value="<?php echo $GiaVe;?>"></td>
+    <td>Giá vé</td>
+    <td><input type="number" name="GiaVe" value="<?php echo $GiaVe;?>"></td>
   </tr>
   <tr>
     <td colspan="2">
