@@ -31,34 +31,16 @@ else
 <table width="50%" border="1" cellspacing="3">
   <tr>
     <td width="23%">Mã tuyến bay</td>
-    <td width="77%"><input type="text" name="MaTuyenBay" value="<?php echo $MaTuyenBay;?>" maxlength="6"></td>
+    <td width="77%"><input type="text" name="MaTuyenBay" value="<?php echo $MaTuyenBay;?>"></td>
   </tr>
   
   <tr>
     <td>Mã sân bay đi</td>
-    <td><input type="text" name="MaSanBayDi" value="<?php echo $MaSanBayDi;?>" maxlength="3"></td>
+    <td><input type="text" name="MaSanBayDi" value="<?php echo $MaSanBayDi;?>"></td>
   </tr>
     <tr>
     <td>Mã sân bay đến</td>
-    <td><input type="text" name="MaSanBayDen" value="<?php echo $MaSanBayDen;?>" maxlength="3"></td>
-  </tr>
-
-  <tr>
-    <td>Các mã sân bay hợp lệ</td>
-    <td><table id="idxp" class="dropdown-content"> 
-          <?php
-          $Cb = new Sanbay();
-      $arrCb = $Cb->getall();
-          foreach ($arrCb as $i => $v) {
-            if($i%3==0) echo"<tr>";
-            echo "<td>{$v['MaSanBay']}</td>";
-            if($i%3==2) echo"</tr>";
-          }
-          ?> 
-        </table></td>
-  </tr>
-  <tr>
-    
+    <td><input type="text" name="MaSanBayDen" value="<?php echo $MaSanBayDen;?>"></td>
   </tr>
   <tr>
     <td colspan="2">
