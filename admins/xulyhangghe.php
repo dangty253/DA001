@@ -5,23 +5,26 @@ if (!isset($_SESSION)) session_start();
 spl_autoload_register("loadClass");
 
 $c = getIndex("c","");
-$MaHangGhe=postIndex("MaHangGhe","");
-$TenHangGhe=postIndex("TenHangGhe","");
+$username=postIndex("username","");
+$Password=md5(postIndex("Password",""));
+$Ten=postIndex("Ten","");
+$SoDienThoai=postIndex("SoDienThoai","");
+$Email=postIndex("Email","");
 if($c=='add')
 {
-	$Sb=new Hangghe();
-	$Sb->add($MaHangGhe,$TenHangGhe);
+	$Sb=new Admin();
+	$Sb->add($username,$Password,$Ten,$SoDienThoai,$Email);
 }
 else if($c=='update')
 {
-	$Sb=new Hangghe();
-	$Sb->update($MaHangGhe,$TenHangGhe);
+	$Sb=new Admin();
+	$Sb->update($username,$Password,$Ten,$SoDienThoai,$Email);
 }
 else if($c=='delete')
 {
-	$MaHangGhe = getIndex("id","");
-	$Sb=new Hangghe();
-	$Sb->delete($MaHangGhe);
+	$username = getIndex("id","");
+	$Sb=new Admin();
+	$Sb->delete($username);
 }
 header("Location: index.php?mod=datvemb&group=hangghe&c=$c");
 exit;
