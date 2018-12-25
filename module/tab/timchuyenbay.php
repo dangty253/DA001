@@ -22,7 +22,7 @@ else{
 }
 
 ?>
-<table width="100%">
+<table class="table borderless col-md-12 col-xs-4">
 	<tr>
 		<td>
 			<p id="tuyen"> <?php echo $SanBayDi[0]['TenTinhThanh']."(".$SanBayDi[0]['MaSanBay'].")"."-".$SanBayDi[0]['TenSanBay']." → ".$SanBayDen[0]['TenTinhThanh']."(".$SanBayDen[0]['MaSanBay'].")"."-".$SanBayDen[0]['TenSanBay'] ?></p>
@@ -39,7 +39,7 @@ else{
 	</tr>
 	<tr>
 		<td>
-			<table class="chuyenbay">
+			<table class="table cb col-md-12 col-xs-4">
 				<tr>
 					<td>Hãng</td>
 					<td>Giờ khởi hành</td>
@@ -55,7 +55,7 @@ else{
 			<?php
 			foreach ($arrCb as $i => $v) {
 				?>
-				<table class="chuyenbay">
+				<table class="chuyenbay col-md-12 col-xs-4">
 					<tr>
 						<td><?php echo $v['TenHangMayBay'] ?></td>
 						<td>
@@ -69,7 +69,7 @@ else{
 						<td><?php echo $v['ThoiGianBay'] ?></td>
 						<td>
 							<p><?php echo $v['GiaVe']."VND" ?></p>
-							<input type="button"  value="Chọn" onclick="chon('<?php echo $v['MaChuyenBay']; ?>')">
+							<input  type="button"  value="Chọn" onclick="chon('<?php echo $v['MaChuyenBay']; ?>')" class="btn btn-warning">
 						</td>
 					</tr>
 				</table>

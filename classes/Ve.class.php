@@ -2,7 +2,7 @@
 class Ve extends Db
 {	
 	function Addve($MaPhieuDat,$MaChuyenBay,$TenHanhKhach,$NgaySinh,$DanhXung,$LoaiVe){
-		$sql="INSERT INTO ve(MaPhieuDat,MaChuyenBay,TenHanhKhach,NgaySinh,DanhXung,LoaiVe) VALUES ($MaPhieuDat','$MaChuyenBay',$TenHanhKhach','$NgaySinh','$DanhXung','$LoaiVe')";
+		$sql="INSERT INTO ve(MaPhieuDat,MaChuyenBay,TenHanhKhach,NgaySinh,DanhXung,LoaiVe) VALUES ('$MaPhieuDat','$MaChuyenBay','$TenHanhKhach','$NgaySinh','$DanhXung','$LoaiVe')";
 		$this->AddQuery($sql);
 	}	
 	function getfetchPD($MaPhieuDat)

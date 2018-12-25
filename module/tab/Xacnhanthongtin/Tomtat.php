@@ -1,6 +1,6 @@
-<table width="100%" class="xntt">
+<table  class="xntt col-md-12 col-xs-4">
 				<tr>
-					<td colspan="3">
+					<td>
 						<h2><?php echo $TenTinhThanh1." → ".$TenTinhThanh2 ?></h2>
 						<hr>
 					</td>

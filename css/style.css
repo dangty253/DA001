@@ -1,63 +1,106 @@
+
 body {
-	background:url('../image/1.jpg') no-repeat 0px 0px;
-	background-size: cover;
-	background-attachment: fixed;
-    background-position: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 100%;
+    color: white;
+    background: url(../image/1.jpg)no-repeat center top;
+    background-size: cover;
 }
-h1{
-	color:red;
-	font-size:50px;
-	margin:50px 0px 20px 0px;
-	text-align:center;
+
+a{
+    color: white;
 }
-h2{
-	color: #FFC107;
-    margin:10px 0px 5px 0px;
+a:hover {
+    text-decoration: none;
+    font-weight: bold;
 }
+/* h tag */
+h1 {
+    font-family: 'Unlock', cursive;
+    text-align: center;
+    color: white;
+    font-size: 60px;
+    text-shadow: 5px 5px 8px #000000;
+}
+
+h1:hover {
+    color: #FFC107;
+}
+h2 {
+     display: inline-block;
+    text-align: left;
+    font-size: 24px;
+    color: #F7B322;
+}
+/* End h tag */
+
+
+/* Table */
+table.borderless td, table.borderless th {
+    border: none;
+}
+table.cb td{
+    vertical-align: middle;
+    background: rgba(0,0,0,0.75);
+    color: #F7B322;
+    border-top: 2px solid #FFC107;
+    border-bottom: 2px solid #FFC107;
+}
+/* End Table */
+
+
+.Form-tuyenbay {
+    box-sizing: content-box; 
+    width: 65%;
+    padding: 3em 3em;
+    background: rgba(0,0,0,0.5);
+    margin: 0 auto;
+}
+
 .tab-item{
-    text-align: center;;
+    text-align: center;
 }
 .tab-item a{
-	text-decoration: none;
-	color: #b1b1b1; 
+    text-decoration: none;
+    color: #b1b1b1; 
     font-size: 30px;
 }
 .tab-item a:active{
-	color: #fff;
+    color: #fff;
 }
 .tab-item a:hover{
-	color: #fff;
+    color: #fff;
 }
 .mid-box{
-	background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.6);
 }
 
 /* Dropdown Button */
 .date,.hangghe{
-	padding: 5px;
+    padding: 5px;
     font-size: 16px;
     border: none;
-    cursor: pointer;	
+    cursor: pointer;    
 }
 .hangghe{
-	padding: 5px;
+    padding: 5px;
     font-size: 16px;
     border: none;
     cursor: pointer;
-    border: 2px solid #FFC107;	
+    border: 2px solid #FFC107;  
 }
 .tuoi td p,input[type=button]{
-	display: inline-block;
-	padding: 8px 12px;
-	font-size: 20px;
-	border: 2px solid #FFC107;
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 20px;
+    border: 2px solid #FFC107;
 }
 input[type=button]:hover,input[type=submit]:hover{
-	background-color:#FFC107;
-	cursor: pointer;
+    background-color:#FFC107;
+    cursor: pointer;
 }
 input[type=submit]{
-	background-color: #fff;
+    background-color: #fff;
     color: #000;
     padding: 16px;
     font-size: 16px;
@@ -69,29 +112,26 @@ input[type=checkbox]{
     zoom:1.5;
 }
 .chuyenbay{
-    color: #000;
-    background-color:#FFF;
-    width: 100%;
     border: 2px solid #FFC107;
     margin:5px 0px;
     text-align: center;
 }
 .chuyenbay tr td{
     width: 20%;
-    font-size: 22px;
+    font-size: 18px;
 }
 #tuyen{
     color: #fff;
-    font-size: 26px;
+    font-size: 25px;
+
 }
 #thongtin{
    color: #fff;
     font-size: 20px; 
 }
 .xntt{
-    color: #000;
-    background-color: #fff;
-    padding: 0px 0px 10px 7px;
+    color: #FFFFFF;
+    padding: 0px 0px 2px 2px;
     margin-bottom:20px;
     font-size: 20px;
     border: 2px solid #FFC107;
@@ -116,20 +156,15 @@ select{
     font-size: 26px;
     padding: 16px
 }
-.dangnhap a{
-    text-decoration: none;
-    color: #fff;
-    font-size: 22px;
-    padding-top: 10px;
-
-}
-.dangnhap a:hover{
-    color: #FFC107;;
-}
 .dangnhap input{
     border: 2px solid #FFC107;
     font-size: 20px;
     width: 300px;
+    padding: 16px
+}
+.dangky{
+    text-align: left;
+    font-size: 18px;
     padding: 16px
 }
 .dropbtn {
@@ -152,12 +187,12 @@ select{
     border: 10px;
 }
 .dropdown input[type=text]{
- 	border: 2px solid #FFC107;
- 	width: 100%;
+    border: 2px solid #FFC107;
+    width: 100%;
  }
 .dropdown input[type=date]{
- 	border: 2px solid #FFC107;
- 	width: 90%;
+    border: 2px solid #FFC107;
+    width: 90%;
  }
 .dropdown-content {
     display: none;
@@ -181,7 +216,7 @@ select{
 td.sbd:hover  {background-color: #FFC107;}
 td.sbxp:hover {background-color: #FFC107;}
  
-.show {display:block;}	
+.show {display:block;}  
 label.error {
     display: block;
     color:red;

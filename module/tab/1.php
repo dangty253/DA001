@@ -5,15 +5,16 @@ if (!defined("ROOT"))
 }
 ?>
 <form action="xulytimchuyenbay.php" method="post">
-<table width="100%" cellspacing="10" class="dropdown">
+<div class="row">
+<table class="table col-md-12 col-xs-4">
 <tr>
-	<td width="50%" ><h2>Sân bay xuất phát</h2></td>
+	<td><h2>Sân bay xuất phát</h2></td>
 	<td><h2>Sân bay đến</h2></td>
 </tr>
 <tr >
 	<td>
-		<input type="text" value="Hà Nội" name="dxp" class="dropbtn" autocomplete="off">
-        <table width="50%" id="idxp" class="dropdown-content" > 
+		<input id="dxp" type="text" value="Hà Nội" name="dxp" class="dropbtn col-md-12 col-xs-4" autocomplete="off">
+        <table id="idxp" class="dropdown-content"> 
         	<?php
         	$Cb = new Sanbay();
 			$arrCb = $Cb->getall();
@@ -26,8 +27,8 @@ if (!defined("ROOT"))
         </table>	
 	</td>
 	<td>
-		<input type="text" value="Hồ Chí Minh" name="dd" class="dropbtn" autocomplete="off">
-        <table width="50%" id="idd" class="dropdown-content" > 
+		<input id="dd" type="text" value="Hồ Chí Minh" name="dd" class="dropbtn col-md-12 col-xs-4" autocomplete="off">
+        <table  id="idd" class="dropdown-content"> 
             <?php
         	$Cb = new Sanbay();
 			$arrCb = $Cb->getall();
@@ -40,38 +41,33 @@ if (!defined("ROOT"))
         </table>
 	</td>
 </tr>
+</table>
+<table class="table col-md-12 col-xs-4">
 <tr>
-	<td>
-		<table width="100%">
-		<tr>
-			<td width="50%"><h2>Ngày đi</h2></td>
-			<td><h2><input type="checkbox" id="cbox" onclick="chieuve(this)">Ngày trở về</h2></td></td>
-		</tr>
-		</table>
-	</td>
-	<td><h2>Hạng ghế</h2></td>
+		
+			<td><h2>Ngày đi</h2></td>
+			<td><h2><input type="checkbox" id="cbox" onclick="chieuve(this)">Khứ hồi </h2></td></td>
+			<td><h2>Hạng ghế</h2></td>
+
 </tr>
 <tr>
-	<td>
-		<table width="100%">
 		<tr >
-			<td width="50%"><input type="date" class="date" name="datexp" value="<?php echo date('Y-m-d')?>"></td>
-			<td ><input type="date" class="date" name="return" value="<?php echo date('Y-m-d')?>" disabled style="visibility: hidden;"></td>
-		</tr>
-		</table>	
-	</td>
-	<td>
-		<select name="hangghe" class="hangghe">
+			<td><input type="date" class="date col-md-12 col-xs-4" name="datexp" value="<?php echo date('Y-m-d')?>"  min="<?php echo date('Y-m-d')?>" max="2019-12-31" onchange="date()"></td>
+			<td ><input type="date" class="date col-md-12 col-xs-4" name="return" value="<?php echo date('Y-m-d')?>"  min="2018-01-01" max="2019-12-31" disabled style="visibility: hidden;"></td>
+			<td>
+		<select name="hangghe" class="hangghe col-md-12 col-xs-4">
   			<option value="Eco">Economy</option>
 			<option value="Bus">Business</option>
   			<option value="Fcl">First class</option>
   			<option value="Pcl">Premyum Economy</option>
 		</select>
 	</td>
+		</tr>
+		
+	
 </tr>
 <tr>
-	<td colspan="2">
-		<table width="60%">
+	<table class="table">
 			<tr>
 				<td><h2>Người lớn(12+)</h2></td>
 				<td><h2>Trẻ em(2-11)</h2></td>
@@ -97,13 +93,20 @@ if (!defined("ROOT"))
 					<input type="button" name="cong3" value="+" onclick="tinh(this)">
 				</td>
 			</tr>
-		</table>
-	</td>
+	</table>
 </tr>
-<tr><td colspan="2"><input type="submit" name="submitTim" value="Tìm chuyến bay" ></tr></td>
+<tr>
+	<td><input type="submit" name="submitTim" value="TÌM CHUYẾN BAY " class="btn btn-info"></td>
+</tr>
 </table>
+</div>
 </form>
 <script type="text/javascript">
+function date(){
+				var d = document.getElementsByClassName('date');
+				d[1].min=d[0].value;
+				if(d[1].value<d[0].value) d[1].value=d[0].value;
+			}	
 	function chieuve(elm){
 		var d = document.getElementsByClassName('date');
 		if(elm.checked==true) 	{
@@ -164,4 +167,17 @@ if (!defined("ROOT"))
             }
          }
     });
+    jQuery.validator.addMethod("notEqual", function(value, element, param) {
+  return this.optional(element) || value != document.getElementById(param).value;
+}, "Chọn nơi khác");	
+   	$(document).ready(function() {
+
+		//Khi bàn phím được nhấn và thả ra thì sẽ chạy phương thức này
+		$("#form").validate({
+					rules: {
+						dd: { notEqual: "dxp" }
+					}
+				
+				});
+	});
 </script>

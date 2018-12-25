@@ -43,30 +43,30 @@ else $kh="";
 ?>
 
 <form action="index.html" method="post" id="js">
-<table  width="100%" >
+<table class="table borderless col-md-12 col-xs-4">
 	<tr>
-		<td width="58%" valign="top">
-			<table width="100%" class="xntt">
-				<tr>
-					<td colspan="2"><h2>Thông tin liên hệ</h2></td>
-				</tr>
+		<td>
+			<h2>Thông tin liên hệ</h2>
+			
+			<table class="xntt">
 				<tr>
 					<td>Họ</td>
 					<td>Tên</td>
 				</tr>
 				<tr>
-					<td><input type="text" name="Hokh" value="<?php if ($kh!="") echo mb_substr($kh['HoTen'],0,$k-1) ?>" required></td>
-					<td><input type="text" name="Tenkh" value="<?php if ($kh!="") echo mb_substr($kh['HoTen'],$k) ?>" required></td>
+					<td><input  type="text" name="Hokh" value="<?php if ($kh!="") echo mb_substr($kh['HoTen'],0,$k-1) ?>"  required></td>
+					<td><input  type="text" name="Tenkh" value="<?php if ($kh!="") echo mb_substr($kh['HoTen'],$k) ?>"  required></td>
 				</tr>
 				<tr>
 					<td>Số điện thoại </td>
 					<td>Email</td>
 				</tr>
 				<tr>
-					<td><input type="text" name="Sdt" value="<?php if ($kh!="") echo $_SESSION["khachhang_data"]['SoDienThoai']; ?>"></td>
-					<td><input type="text" name="Email" value="<?php if ($kh!="") echo $_SESSION["khachhang_data"]['Email']; ?>"></td>
+					<td><input  type="text" name="Sdt" value="<?php if ($kh!="") echo $_SESSION["khachhang_data"]['SoDienThoai']; ?>" </td>
+					<td><input  type="text" name="Email" value="<?php if ($kh!="") echo $_SESSION["khachhang_data"]['Email']; ?>" ></td>
 				</tr>
 			</table>
+
 			<h2>Thông tin hành khách</h2>
 			<?php
 			$n=$_SESSION['datve']['tuoi'][0];
@@ -80,9 +80,10 @@ else $kh="";
 			include ROOT."/module/tab/Xacnhanthongtin/HanhKhach.php";
 
 			?>
-		</td>
-		<td width="1%" style="visibility: hidden;">&nbsp;</td>
-		<td valign="top" >
+	</td>
+		
+		<td>
+			<h2>Thông tin vé đặt</h2>
 			<?php
 				$TenTinhThanh1=$datve['SanBayDi'][0]['TenTinhThanh'];
 				$TenTinhThanh2=$datve['SanBayDen'][0]['TenTinhThanh'];
@@ -97,29 +98,25 @@ else $kh="";
 
 				}
 				$Cb=$Khoihanh;
-			?>
+			?>	
 			
-			<table width="100%" class="xntt" >
-				<tr>
-					<td colspan="3">
-						<h2>Thông tin đặt</h2>
-						<hr>
-					</td>
-				</tr>
-				<tr>
+
+			<table class="xntt">
+				<h2>Thông tin đặt</h2>
+				
 					<?php 
 						$t=$_SESSION['datve']['tuoi'];
 						if($c=="mac2") $_SESSION['datve']['price']+=$Cb['GiaVe']*$t[0]+$Cb['GiaVe']*$t[1]*0.9+$Cb['GiaVe']*$t[2]*0.1+$Cbr['GiaVe']*$t[0]+$Cbr['GiaVe']*$t[1]*0.9+$Cbr['GiaVe']*$t[2]*0.1;
 						else $_SESSION['datve']['price']+=$Cb['GiaVe']*$t[0]+$Cb['GiaVe']*$t[1]*0.9+$Cb['GiaVe']*$t[2]*0.1;
 					?>
-					<td width="69%" ><h4><?php echo $Cb['TenHangMayBay']." (Người lớn) x".$t[0] ?></h4></td>
+					
+					<td><h4><?php echo $Cb['TenHangMayBay']." (Người lớn) x".$t[0] ?></h4></td>
 					<td style="text-align: right;"><?php 
 						if($c=="mac2" && $Cb['TenHangMayBay']==$Cbr['TenHangMayBay']) 
 							echo number_format( $Cb['GiaVe']*$t[0]+$Cbr['GiaVe']*$t[0],0, '', '.')." VND";
 						else echo number_format( $Cb['GiaVe']*$t[0],0, '', '.')." VND" ;
 							
 					?></td>
-				</tr>
 				<?php
 				if($c=="mac2" && $Cb['TenHangMayBay']!=$Cbr['TenHangMayBay']){
 					?>
@@ -166,16 +163,18 @@ else $kh="";
 				}
 				?>
 					<tr>
-						<td style="text-align: center;"><h4>Tổng tiền : </h4></td>
+						<td ><h4>Tổng tiền : </h4></td>
 						<td style="text-align: right;"><?php echo number_format($_SESSION['datve']['price'],0, '', '.')." VND" ;
 					?></td>
 					</tr>
+				</td>
 			</table>
-			<input type="submit" name="submitxacnhan" value="Xác nhận" >
+			<input class="btn btn-warning" type="submit" name="submitxacnhan" value="Xác nhận" >
 		</td>
 	</tr>
 </table>
 </form>
+
 				<script type="text/javascript">
 				$(document).ready(function() {
 				    $("#js").validate({
